@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+
+
+//  Global Variables.
+$fullHeight: 100vh;
+$fullWidth: 100%;
+$primaryBackgroundColor: #efefef;
+$secondaryBackgroundColor: #ffffff;
+$primaryTextColor: #efefef;
+$secondaryTextColor: #808080;
+
+.App {
+  height: $fullHeight;
+  width: $fullWidth;
+  background: $primaryBackgroundColor;
+
+  .main-header {
+    height: 42px;
+    width: $fullWidth;
+    background: $secondaryBackgroundColor;
+    padding: 0 30px;
+
+    .brand-wrapper {
+      height: 100%;
+      width: $fullWidth;
+      display: flex;
+      align-items: center;
+
+      .brand-wrapper__logo-image {
+        width: 80px;
+      }
+    }
+  }
+
+  .body-container {
+    height: calc(100% - 42px);
+    width: $fullWidth;
+    display: flex;
+
+    .left-drawer-wrapper {
+      height: 100%;
+      width: 220px;
+      background: $secondaryBackgroundColor;
+      box-shadow: -2px 0 5px rgba(125, 125, 125, 0.2);
+      z-index: 1;
+
+      ul {
+        list-style-type: none;
+
+        li {
+          margin: 5px 0;
+          line-height: 3;
+          font-size: 0.9rem;
+          padding: 0 15px;
+          border-bottom: 1px solid rgba(200, 200, 200, 0.2);
+          display: flex;
+          align-items: center;
+
+          img {
+            margin-right: 10px;
+            width: 12px;
+          }
+          span {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+
+    .main-container {
+      height: calc(100% - 42px);
+      width: calc(100% - 220px);
+      background: $secondaryBackgroundColor;
+      border-radius: 3px;
+      margin: 20px;
+
+      .header-wrapper {
+        width: 100%;
+        padding: 15px 25px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(200, 200, 200, 0.2);
+
+        .header-wrapper__title {
+          color: $secondaryTextColor;
+        }
+        .header-wrapper__button {
+          font-size: 0.65rem;
+          color: $primaryTextColor;
+          background: #a91c74;
+          border: none;
+          border-radius: 30px;
+          padding: 5px 10px;
+          cursor: pointer;
+
+          &:hover {
+            background: #e72aa1;
+          }
+        }
+      }
+
+      .show-search-wrapper {
+        padding: 30px 25px 10px 25px;
+        display: flex;
+        font-size: 0.8rem;
+        align-items: center;
+        justify-content: space-between;
+
+        .show-wrapper {
+          .show-number {
+            border: 1px solid rgba(200, 200, 200, 0.2);
+            border-radius: 6px;
+            margin: 0 2px;
+            padding: 2px 6px;
+          }
+        }
+        
+        .search-wrapper {
+          input {
+            height: 30px;
+            width: 150px;
+            margin-left: 5px;
+            border: 1px solid rgba(200, 200, 200, 0.2);
+            border-radius: 3px;
+          }
+        }
+      }
+
+      .table {
+        width: calc(100% - 50px);
+        border: 1px solid rgba(200, 200, 200, 0.2);
+        border-collapse: collapse;
+        margin: 0 auto;
+
+        thead {
+          background: $primaryBackgroundColor;
+
+          th {
+            height: 40px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border: 1px solid rgba(200, 200, 200, 0.2);
+            padding: 5px;
+            text-align: left;
+          }
+        }
+
+        tbody {
+          width: 100%;
+
+          tr {
+            &:nth-child(odd) {
+              background: $primaryBackgroundColor;
+            }
+            td {
+              height: 60px;
+              font-size: 0.8rem;
+              border: 1px solid rgba(200, 200, 200, 0.2);
+              padding: 0 5px;
+
+              &:first-child {
+                text-align: center;
+              }
+
+              .action-button {
+                font-size: 0.65rem;
+                color: $primaryTextColor;
+                background: #a91c74;
+                border: none;
+                border-radius: 30px;
+                padding: 2px 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
